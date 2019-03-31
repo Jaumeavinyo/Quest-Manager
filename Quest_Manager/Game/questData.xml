@@ -5,10 +5,25 @@
       <ObjectOnCamera x="100" y ="100" w ="100" h ="100"/>
     </ActivationEvent>
     <SubEvent Type="1">
-      <ObjectOnCamera x="1200" y ="400" w ="500" h ="500"/>
+      <ObjectOnCamera x="700" y ="100" w ="100" h ="100"/>
     </SubEvent>
+   <SubEvent Type="1">
+      <ObjectOnCamera x="1000" y ="500" w ="100" h ="100"/>
+    </SubEvent>
+  
   </quest>
-	
+	 <quest DNI ="1111" Reward="2">
+    <ActivationEvent Type ="1">
+      <ObjectOnCamera x="100" y ="500" w ="100" h ="100"/>
+    </ActivationEvent>
+    <SubEvent Type="1">
+      <ObjectOnCamera x="700" y ="500" w ="100" h ="100"/>
+    </SubEvent>
+     <SubEvent Type="1">
+      <ObjectOnCamera x="1000" y ="500" w ="100" h ="100"/>
+    </SubEvent>
+  
+  </quest>
 
 		
 

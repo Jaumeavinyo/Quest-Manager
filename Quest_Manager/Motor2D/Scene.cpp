@@ -101,30 +101,56 @@ bool Scene::Update(float dt)
 	myApp->render->DrawQuad(Area, 255, 255, 255, 255, true, true);
 	myApp->render->DrawQuad(ValidArea, 0, 0, 0, 150, true, true);
 	
-
+	if (myApp->input->GetKey(SDL_SCANCODE_1) == KEY_REPEAT) {
+		LOG("SPACEEEE");
+	}
 
 	//---------------------------------------------GAME--------------------------------------------
+	//LOOKING THE PREPARED_QUESTS LIST
 	for (std::list <Quest*>::iterator it = myApp->quests->preparedQuests.begin(); it != myApp->quests->preparedQuests.end(); it++) {
-		
-		if ((*it)->activationEvent->type == MOVEMENT_EVENT && ((*it)->activationEvent->Object.x - ValidArea.x)<100 && ((*it)->activationEvent->Object.x - ValidArea.x)>-100 && ((*it)->activationEvent->Object.y - ValidArea.y) < 150 && ((*it)->activationEvent->Object.y - ValidArea.y) > -150) {
+		//if the activation event if not completed draw it grey
+		if ((*it)->activationEvent->completed == false) {
+			myApp->render->DrawQuad((*it)->activationEvent->Object, 255,0, 0, 150, true, true);
+		}
+		//if you toutch it put in in completed
+		if ((*it)->activationEvent->completed == false && (*it)->activationEvent->type == MOVEMENT_EVENT && ((*it)->activationEvent->Object.x - ValidArea.x)<100 && ((*it)->activationEvent->Object.x - ValidArea.x)>-100 && ((*it)->activationEvent->Object.y - ValidArea.y) < 150 && ((*it)->activationEvent->Object.y - ValidArea.y) > -150) {
 			(*it)->activationEvent->completed = true;
+			
 			LOG("ACTIVATION EVENT COMPLETED");
+			//move the quest from prepared to activated
 			myApp->quests->activatedQuests.push_back((*it));
+			myApp->quests->preparedQuests.erase(it);
 		}	
 	}
+
+	//LOOKING THE ACTIVATED QUESTS
 	for (std::list <Quest*>::iterator it = myApp->quests->activatedQuests.begin(); it != myApp->quests->activatedQuests.end(); it++) {
-		
+		//DRAWING IN GREEN THE ACTIVATION EVENT ACTIVATED
+		myApp->render->DrawQuad((*it)->activationEvent->Object, 0, 255, 0, 150, true, true);
 		for (std::list<Event*>::iterator it_= (*it)->subMissions.begin(); it_ != (*it)->subMissions.end(); it_++) {
-			LOG("SECUNDARY EVENT COMPLETED");
-			if ((*it_)->type == MOVEMENT_EVENT && ((*it_)->Object.x - ValidArea.x) < 100 && ((*it_)->Object.x - ValidArea.x) > -100 && ((*it_)->Object.y - ValidArea.y) < 150 && ((*it_)->Object.y - ValidArea.y) > -150) {
-				
-				LOG("SECUNDARY EVENT COMPLETED");
+			//LOOKING IF THERE ARE SUBMISSIONS LEFT
+			int subMissions = 0;
+			for (std::list<Event*>::iterator it_ = (*it)->subMissions.begin(); it_ != (*it)->subMissions.end(); it_++) {
+				if ((*it_)->completed == false) {
+					subMissions++;
+				}
 			}
-			
+			//IF THERE ARE SUBMISSIONS LEFT
+			if (subMissions != 0) {
+				//LOOK IF THE SQUARES ARE INSIDE
+				myApp->render->DrawQuad((*it_)->Object, 0, 0, 0, 150, true, true);
+				if ((*it_)->completed == false && (*it_)->type == MOVEMENT_EVENT && ((*it_)->Object.x - ValidArea.x) < 100 && ((*it_)->Object.x - ValidArea.x) > -100 && ((*it_)->Object.y - ValidArea.y) < 150 && ((*it_)->Object.y - ValidArea.y) > -150) {
+					(*it_)->completed = true;
+					LOG("SECUNDARY EVENT COMPLETED");
+				}
+			}//MOVE THE QUEST TO ENDED QUESTS
+			else if (subMissions == 0) {
+				myApp->quests->endedQuests.push_back((*it));
+				myApp->quests->activatedQuests.erase((it));
+			}
 		}
 	}
-	//myApp->quests->activatedQuests.
-	//myApp->render->DrawQuad(, 255, 0, 255, alpha);
+	
 
 	SDL_Rect rect;
 	rect.x = 100;
