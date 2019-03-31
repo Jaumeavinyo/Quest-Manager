@@ -45,9 +45,11 @@ bool Scene::Start()
 
 	
 	ValidArea.x = 400;
-	ValidArea.y = 350;
-	ValidArea.w = 200;
-	ValidArea.h = 200;
+	position.x = 400;
+	ValidArea.y = 350 ;
+	position.y = 350;
+	ValidArea.w = 50;
+	ValidArea.h = 50;
 
 	return true;
 }
@@ -64,34 +66,53 @@ bool Scene::Update(float dt)
 
 	if (myApp->input->GetKey(SDL_SCANCODE_UP) == KEY_REPEAT) {
 		myApp->render->camera.y += 1;
-		ValidArea.y -= 1;
+		
 	}
 		
 
 
 	if (myApp->input->GetKey(SDL_SCANCODE_DOWN) == KEY_REPEAT) {
 			myApp->render->camera.y -= 1;
-			ValidArea.y += 1;
+			
     }
 		
 
 	if (myApp->input->GetKey(SDL_SCANCODE_LEFT) == KEY_REPEAT) {
 		myApp->render->camera.x += 1;
-		ValidArea.x -= 1;
+		
 	}
 		
 
 	if (myApp->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_REPEAT) {
 		myApp->render->camera.x -= 1;
-		ValidArea.x += 1;
-	}
 		
+	}
+	
+
+
+	if (myApp->input->GetKey(SDL_SCANCODE_W) == KEY_REPEAT) {
+		
+		position.y -= 0.2;
+	}
+	if (myApp->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT) {
+		
+		position.y += 0.2;
+	}
+	if (myApp->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
+	
+		position.x -= 0.2;
+	}
+	if (myApp->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) {
+		
+		position.x += 0.2;
+	}
 
 	//---------------------------------------------GAME--------------------------------------------
-	
+	ValidArea.x = (int)position.x;
+	ValidArea.y = (int)position.y;
 	
 	SDL_Rect Area;
-	Area.x = 10;
+	Area.x = -1000;
 	Area.y = 10;
 	Area.w = 10000;
 	Area.h = 10000;
@@ -113,7 +134,7 @@ bool Scene::Update(float dt)
 			myApp->render->DrawQuad((*it)->activationEvent->Object, 255,0, 0, 150, true, true);
 		}
 		//if you toutch it put in in completed
-		if ((*it)->activationEvent->completed == false && (*it)->activationEvent->type == MOVEMENT_EVENT && ((*it)->activationEvent->Object.x - ValidArea.x)<100 && ((*it)->activationEvent->Object.x - ValidArea.x)>-100 && ((*it)->activationEvent->Object.y - ValidArea.y) < 150 && ((*it)->activationEvent->Object.y - ValidArea.y) > -150) {
+		if ((*it)->activationEvent->completed == false && (*it)->activationEvent->type == MOVEMENT_EVENT && ((*it)->activationEvent->Object.x - ValidArea.x)<50 && ((*it)->activationEvent->Object.x - ValidArea.x)>-50 && ((*it)->activationEvent->Object.y - ValidArea.y) < 50 && ((*it)->activationEvent->Object.y - ValidArea.y) > -50) {
 			(*it)->activationEvent->completed = true;
 			
 			LOG("ACTIVATION EVENT COMPLETED");
@@ -129,25 +150,32 @@ bool Scene::Update(float dt)
 		myApp->render->DrawQuad((*it)->activationEvent->Object, 0, 255, 0, 150, true, true);
 		for (std::list<Event*>::iterator it_= (*it)->subMissions.begin(); it_ != (*it)->subMissions.end(); it_++) {
 			//LOOKING IF THERE ARE SUBMISSIONS LEFT
-			int subMissions = 0;
+			int counter = 0;
 			for (std::list<Event*>::iterator it_ = (*it)->subMissions.begin(); it_ != (*it)->subMissions.end(); it_++) {
 				if ((*it_)->completed == false) {
-					subMissions++;
+					counter++;
 				}
 			}
 			//IF THERE ARE SUBMISSIONS LEFT
-			if (subMissions != 0) {
+			if (counter != 0) {
 				//LOOK IF THE SQUARES ARE INSIDE
 				myApp->render->DrawQuad((*it_)->Object, 0, 0, 0, 150, true, true);
-				if ((*it_)->completed == false && (*it_)->type == MOVEMENT_EVENT && ((*it_)->Object.x - ValidArea.x) < 100 && ((*it_)->Object.x - ValidArea.x) > -100 && ((*it_)->Object.y - ValidArea.y) < 150 && ((*it_)->Object.y - ValidArea.y) > -150) {
+				if ((*it_)->completed == false && (*it_)->type == MOVEMENT_EVENT && ((*it_)->Object.x - ValidArea.x) < 50 && ((*it_)->Object.x - ValidArea.x) > -50 && ((*it_)->Object.y - ValidArea.y) < 50 && ((*it_)->Object.y - ValidArea.y) > -50) {
 					(*it_)->completed = true;
 					LOG("SECUNDARY EVENT COMPLETED");
+					
+					if (it_ != (*it)->subMissions.end()) {
+						(*it)->subMissions.erase(it_);
+					}
+					if (it_ == (*it)->subMissions.end()) {
+						(*it)->subMissions.erase(it_);
+						myApp->quests->endedQuests.push_back((*it));
+						myApp->quests->activatedQuests.erase((it));
+						
+					}
 				}
 			}//MOVE THE QUEST TO ENDED QUESTS
-			else if (subMissions == 0) {
-				myApp->quests->endedQuests.push_back((*it));
-				myApp->quests->activatedQuests.erase((it));
-			}
+			
 		}
 	}
 	
@@ -180,3 +208,7 @@ bool Scene::CleanUp()
 
 	return true;
 }
+
+//bool Scene::isInside(SDL_Rect A, SDL_Rect B) {
+//
+//}

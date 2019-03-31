@@ -32,9 +32,13 @@ public:
 	// Called before quitting
 	bool CleanUp();
 
+	//to see if is it inside
+	bool isInside(SDL_Rect A,SDL_Rect B);
+
 private:
 	SDL_Texture* debug_tex;
 	SDL_Rect ValidArea;
+	fPoint position;
 };
 
 #endif // SCENE_H
