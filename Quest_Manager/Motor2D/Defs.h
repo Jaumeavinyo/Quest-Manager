@@ -58,6 +58,13 @@ template <class VALUE_TYPE> void SWAP(VALUE_TYPE& a, VALUE_TYPE& b)
 	b = tmp;
 }
 
+/*Hint 2
+newQuest->subMissions.push_back(createEvent(xxxxx));
+*/
+
+
+
+
 // Standard string size
 #define SHORT_STR	32
 #define MID_STR		255

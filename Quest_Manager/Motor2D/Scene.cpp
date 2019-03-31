@@ -9,7 +9,7 @@
 #include "PathFinding.h"
 #include "Scene.h"
 #include "QuestManager.h"
-
+#include <iterator>
 Scene::Scene() : Module()
 {
 	name.assign("scene");
@@ -92,19 +92,19 @@ bool Scene::Update(float dt)
 
 	if (myApp->input->GetKey(SDL_SCANCODE_W) == KEY_REPEAT) {
 		
-		position.y -= 0.2;
+		position.y -= 0.1;
 	}
 	if (myApp->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT) {
 		
-		position.y += 0.2;
+		position.y += 0.1;
 	}
 	if (myApp->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
 	
-		position.x -= 0.2;
+		position.x -= 0.1;
 	}
 	if (myApp->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) {
 		
-		position.x += 0.2;
+		position.x += 0.1;
 	}
 
 	//---------------------------------------------GAME--------------------------------------------
@@ -113,7 +113,7 @@ bool Scene::Update(float dt)
 	
 	SDL_Rect Area;
 	Area.x = -1000;
-	Area.y = 10;
+	Area.y = -100;
 	Area.w = 10000;
 	Area.h = 10000;
 
@@ -127,6 +127,8 @@ bool Scene::Update(float dt)
 	}
 
 	//---------------------------------------------GAME--------------------------------------------
+
+	
 	//LOOKING THE PREPARED_QUESTS LIST
 	for (std::list <Quest*>::iterator it = myApp->quests->preparedQuests.begin(); it != myApp->quests->preparedQuests.end(); it++) {
 		//if the activation event if not completed draw it grey
@@ -134,11 +136,13 @@ bool Scene::Update(float dt)
 			myApp->render->DrawQuad((*it)->activationEvent->Object, 255,0, 0, 150, true, true);
 		}
 		//if you toutch it put in in completed
-		if ((*it)->activationEvent->completed == false && (*it)->activationEvent->type == MOVEMENT_EVENT && ((*it)->activationEvent->Object.x - ValidArea.x)<50 && ((*it)->activationEvent->Object.x - ValidArea.x)>-50 && ((*it)->activationEvent->Object.y - ValidArea.y) < 50 && ((*it)->activationEvent->Object.y - ValidArea.y) > -50) {
+		if ((*it)->activationEvent->completed == false && (*it)->activationEvent->type == TOUCH_EVENT && ((*it)->activationEvent->Object.x - ValidArea.x)<50 && ((*it)->activationEvent->Object.x - ValidArea.x)>-50 && ((*it)->activationEvent->Object.y - ValidArea.y) < 50 && ((*it)->activationEvent->Object.y - ValidArea.y) > -50) {
 			(*it)->activationEvent->completed = true;
 			
 			LOG("ACTIVATION EVENT COMPLETED");
-			//move the quest from prepared to activated
+			/*TODO 10:
+	         -Move the quest from preparedQuests to activatedQuests and don't forguet to erase it from the rpevious list!
+	        */	
 			myApp->quests->activatedQuests.push_back((*it));
 			myApp->quests->preparedQuests.erase(it);
 		}	
@@ -160,15 +164,23 @@ bool Scene::Update(float dt)
 			if (counter != 0) {
 				//LOOK IF THE SQUARES ARE INSIDE
 				myApp->render->DrawQuad((*it_)->Object, 0, 0, 0, 150, true, true);
-				if ((*it_)->completed == false && (*it_)->type == MOVEMENT_EVENT && ((*it_)->Object.x - ValidArea.x) < 50 && ((*it_)->Object.x - ValidArea.x) > -50 && ((*it_)->Object.y - ValidArea.y) < 50 && ((*it_)->Object.y - ValidArea.y) > -50) {
+				if ((*it_)->completed == false && (*it_)->type == TOUCH_EVENT && ((*it_)->Object.x - ValidArea.x) < 50 && ((*it_)->Object.x - ValidArea.x) > -50 && ((*it_)->Object.y - ValidArea.y) < 50 && ((*it_)->Object.y - ValidArea.y) > -50) {
 					(*it_)->completed = true;
 					LOG("SECUNDARY EVENT COMPLETED");
 					
 					if (it_ != (*it)->subMissions.end()) {
+						ValidArea.h += (*it)->Reward;
+						ValidArea.w += (*it)->Reward;
+						/*TODO 11:
+						Here is where subevents get destroyed when touched. DO IT (*it)->...
+						*/
 						(*it)->subMissions.erase(it_);
 					}
-					if (it_ == (*it)->subMissions.end()) {
+					if (it_ == prev((*it)->subMissions.end())) {
 						(*it)->subMissions.erase(it_);
+						/*TODO 12:
+						Move quests from activated quest to ended quests list and don't forguet to eras it from last list!
+						*/
 						myApp->quests->endedQuests.push_back((*it));
 						myApp->quests->activatedQuests.erase((it));
 						
@@ -209,6 +221,7 @@ bool Scene::CleanUp()
 	return true;
 }
 
-//bool Scene::isInside(SDL_Rect A, SDL_Rect B) {
-//
-//}
+/*TODO 13:
+Execute and see if it is all working as I showed you (if all goes well) 20 minutes ago
+
+*/

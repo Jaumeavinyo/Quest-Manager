@@ -113,4 +113,15 @@ private:
 
 extern App* myApp;
 
+
+
+/*Hint 1:
+-So as we have more than just one quest we will need a for(;;) to go throw all quests and another to go throw all sub events(you will code it in a near future) in every quests. Could look something like this:
+
+for (xmlReader = xmlReader.child("quest"); xmlReader; xmlReader = xmlReader.next_sibling("quest")){
+##Store quest data in a new quest;
+  
+}
+
+*/
 #endif

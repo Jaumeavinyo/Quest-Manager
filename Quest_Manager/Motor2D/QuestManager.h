@@ -7,29 +7,43 @@
 #include <list>
 #include "SDL/include/SDL_rect.h"
 
-
+/*TODO 2:
+create an enum called EVENT_TYPE and give a new event called <TOUCH_EVENT>
+*/
 enum  EVENT_TYPE {
-	MOVEMENT_EVENT = 0
+	TOUCH_EVENT = 0
 };
 //___________________________________________________
-
+/*TODO 0
+Class Event is already created, take note about its variables and types, you will need them in the future
+*/
 class  Event
 {
 public:
 	Event(EVENT_TYPE type_) :type(type_) {};
 	~Event();
 	EVENT_TYPE type;
-	int orderNumber; //if it its value is -1 you can do thgis mission without following any order
+	int orderNumber; 
 	SDL_Rect Object;
 	bool completed = false;
 };  
 //___________________________________________________
-class MovementEvent: public Event {
+class TouchEvent: public Event {
 public: 
-	MovementEvent():Event(EVENT_TYPE::MOVEMENT_EVENT){}
-	~MovementEvent(){}	
+	TouchEvent():Event(EVENT_TYPE::TOUCH_EVENT){}
+	~TouchEvent(){}
 };
 //___________________________________________________
+
+/*TODO 1:  
+-Create a clas named <Quest> 
+-Then ad an integer variable to give every quest an identification number like a "DNI".
+-Add another integer that we are going to use to store the Rewards for every quest. 
+-We also will need a pointer Event called <activationEvent> that in the future will be used to create the mission trigger.
+The last thing we are going to need is a list of Events called <subMissions> we are going to use it to store subevents. 
+(Quests are groups of submissions or "subquests/events")
+*/
+
 class Quest
 {
 public:
@@ -56,7 +70,7 @@ public:
 	Event* createEvent(pugi::xml_node&);
 
 	void ActivateNextQuest(){}
-	
+/*TODO 3: Here we have the xmlfile and the three list i talk you few minutes ago, we will need them in the future*/
 	pugi::xml_document xmlfile;
 
 	std::list<Quest*> preparedQuests; //quest that are not active because the trigger hasn't been triggered

@@ -163,6 +163,7 @@ pugi::xml_node App::LoadConfig(pugi::xml_document& config_file) const
 }
 pugi::xml_node App::LoadQuestsXML(pugi::xml_document& file,char* path) const
 {
+	//The xmlfile you pass should be empty, you have one in the questmanager class
 	pugi::xml_node ret;
 	pugi::xml_parse_result result = file.load_file(path);
 
