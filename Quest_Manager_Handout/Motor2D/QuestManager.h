@@ -10,9 +10,9 @@
 /*TODO 2:
 create an enum called EVENT_TYPE and give a new event called <TOUCH_EVENT>
 */
-enum  EVENT_TYPE {
-	TOUCH_EVENT = 0
-};
+
+
+
 //___________________________________________________
 /*TODO 0
 Class Event is already created, take note about its variables and types, you will need them in the future
@@ -44,20 +44,7 @@ The last thing we are going to need is a list of Events called <subMissions> we 
 (Quests are groups of submissions or "subquests/events")
 */
 
-class Quest
-{
-public:
-	Quest() {};
-	~Quest();
-	
-	int DNI; //just to identify every quest by a number (just in case you want to acces a quest in a future)
-	int Reward;
-	Event* activationEvent;
-	std::list <Event*> subMissions;
 
-private:
-	
-};
 //___________________________________________________
 
 class Quest_Manager : public Module {

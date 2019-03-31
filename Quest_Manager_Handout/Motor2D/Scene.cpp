@@ -143,8 +143,8 @@ bool Scene::Update(float dt)
 			/*TODO 10:
 	         -Move the quest from preparedQuests to activatedQuests and don't forguet to erase it from the rpevious list!
 	        */	
-			myApp->quests->activatedQuests.push_back((*it));
-			myApp->quests->preparedQuests.erase(it);
+			
+
 		}	
 	}
 
@@ -174,15 +174,16 @@ bool Scene::Update(float dt)
 						/*TODO 11:
 						Here is where subevents get destroyed when touched. DO IT (*it)->...
 						*/
-						(*it)->subMissions.erase(it_);
+						
+
 					}
 					if (it_ == prev((*it)->subMissions.end())) {
 						(*it)->subMissions.erase(it_);
 						/*TODO 12:
 						Move quests from activated quest to ended quests list and don't forguet to eras it from last list!
 						*/
-						myApp->quests->endedQuests.push_back((*it));
-						myApp->quests->activatedQuests.erase((it));
+						
+
 						
 					}
 				}
