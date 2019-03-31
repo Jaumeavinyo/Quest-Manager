@@ -1,6 +1,6 @@
 #ifndef SCENE_H
 #define SCENE_H
-
+#include "SDL/include/SDL_rect.h"
 #include "Module.h"
 
 struct SDL_Texture;
@@ -34,6 +34,7 @@ public:
 
 private:
 	SDL_Texture* debug_tex;
+	SDL_Rect ValidArea;
 };
 
 #endif // SCENE_H

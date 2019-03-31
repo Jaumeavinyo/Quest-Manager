@@ -49,6 +49,9 @@
     <ClCompile Include="Textures.cpp">
       <Filter>Game Files\Modules\Main Functionalities</Filter>
     </ClCompile>
+    <ClCompile Include="QuestManager.cpp">
+      <Filter>Game Files\Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PugiXml\src\pugiconfig.hpp">
@@ -110,6 +113,9 @@
     </ClInclude>
     <ClInclude Include="Textures.h">
       <Filter>Game Files\Modules\Main Functionalities</Filter>
+    </ClInclude>
+    <ClInclude Include="QuestManager.h">
+      <Filter>Game Files\Modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

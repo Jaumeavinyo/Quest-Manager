@@ -17,6 +17,7 @@ class Scene;
 class Map;
 class PathFinding;
 class EntityManager;
+class Quest_Manager;
 
 class App
 {
@@ -50,11 +51,14 @@ public:
 	const char* GetOrganization() const;
 	float GetDT() const;
 
-private:
-
 	// Load config file
 	pugi::xml_node LoadConfig(pugi::xml_document&) const;
+	pugi::xml_node LoadQuestsXML(pugi::xml_document& config_file, char* path) const;
 
+private:
+
+	
+	
 	// Call modules before each loop iteration
 	void PrepareUpdate();
 
@@ -73,15 +77,16 @@ private:
 public:
 
 	// Modules
-	Window*			win = NULL;
-	Input*			input = NULL;
-	Render*			render = NULL;
-	Textures*			tex = NULL;
-	Audio*			audio = NULL;
-	Scene*			scene = NULL;
-	Map*				map = NULL;
-	PathFinding*		pathfinding = NULL;
-	EntityManager*	entities = NULL;
+	Window*			     win = NULL;
+	Input*			     input = NULL;
+	Render*			     render = NULL;
+	Textures*		     tex = NULL;
+	Audio*			     audio = NULL;
+	Scene*		     	 scene = NULL;
+	Map*				 map = NULL;
+	PathFinding*		 pathfinding = NULL;
+	EntityManager*	     entities = NULL;
+	Quest_Manager*       quests = NULL;
 
 private:
 

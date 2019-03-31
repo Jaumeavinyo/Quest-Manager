@@ -14,6 +14,7 @@
 #include "Pathfinding.h"
 #include "EntityManager.h"
 #include "App.h"
+#include "QuestManager.h"
 
 #include "Brofiler/Brofiler.h"
 
@@ -30,6 +31,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	map = new Map();
 	pathfinding = new PathFinding();
 	//entities = new EntityManager;
+	quests = new Quest_Manager();
 
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
@@ -41,6 +43,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(pathfinding);
 	AddModule(scene);
 	//AddModule(entities);
+	AddModule(quests);
 
 	// render last to swap buffer
 	AddModule(render);
@@ -155,6 +158,18 @@ pugi::xml_node App::LoadConfig(pugi::xml_document& config_file) const
 		LOG("Could not load map xml file config.xml. pugi error: %s", result.description());
 	else
 		ret = config_file.child("config");
+
+	return ret;
+}
+pugi::xml_node App::LoadQuestsXML(pugi::xml_document& file,char* path) const
+{
+	pugi::xml_node ret;
+	pugi::xml_parse_result result = file.load_file(path);
+
+	if (result == NULL)
+		LOG("Could not load  xml file <loadxmlfunction> pugi error: %s", result.description());
+	else
+		ret = file.child("quests");
 
 	return ret;
 }
