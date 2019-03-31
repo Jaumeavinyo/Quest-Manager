@@ -9,6 +9,21 @@
 Quest_Manager::Quest_Manager() {
 }
 Quest_Manager::~Quest_Manager() {
+
+	for (std::list <Quest*>::iterator it = preparedQuests.begin(); it != preparedQuests.end(); it++) {
+		preparedQuests.erase(it);
+	}
+		
+
+	for (std::list <Quest*>::iterator it = activatedQuests.begin(); it != activatedQuests.end(); it++) {
+		activatedQuests.erase(it);
+	}
+		
+
+	for (std::list <Quest*>::iterator it = endedQuests.begin(); it != endedQuests.end(); it++) {
+		endedQuests.erase(it);
+	}
+		
 }
 bool Quest_Manager::Awake(pugi::xml_node& config) {
 	LOG("STARTING QUESTMANAGER");
