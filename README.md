@@ -17,11 +17,11 @@ Code should look something like this for Quests and Events structure:
 
 Quest:
 
-![Quest Class](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/Quest.png)
+![Quest Class](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/Quest.png?raw=true)
 
 Event:
 
-![Event Class](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/Quest.png)
+![Event Class](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/Event.png?raw=true)
 
 So you maybe are asking yourself… Who handles all this quests, events and information and make it work together? 
 A quest Manager!
