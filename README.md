@@ -35,7 +35,7 @@ three lists:
 
 The manager is the one that will handle quests and decide where they should go. Prepared quests are the ones that have been stored and prepared to be activated by the activation event. These quests can go to the second list if we trigger the activation event. If a quest is finished will end up in the ended quests list.
 
-# Do you really understand What are events?
+### Do you really understand What are events?
 
 
 
