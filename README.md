@@ -1,5 +1,6 @@
 ### Introduction to quest management
 So I needed to create a system to manage events that could be easily implemented in our games throw an XML file and be able to be activated and deactivated when finished. I had worked with other management systems before but this research work was going to be different. I had never worked with real missions in a game and if there was a mission it was very primitive and hardcoded. So it was time to try a new Quest manager!
+I prepared this guide to be a easy tutorial to follow but if you have any doubs contact me on: jaumavi1999@hotmail.com
 
 ### DOWNLOAD LINKS
 
