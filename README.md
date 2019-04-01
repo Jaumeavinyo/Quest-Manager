@@ -53,6 +53,12 @@ I think the most useful way to explain this is to show you the xml file.
 
 ![XML_File](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/XML_File.png?raw=true)
 
+As you can see there are two different quests, each quest has a DNI (identification number) and a different reward to give the player when he accomplishes the quest. Every quest need an activation event and this event is “type 1” which means is a touch event. So we know that the activation event is an object that activates the quest if you touch it.
+The activation event is not the only event the quest has. Once the quest is activated subEvents turn visible and can be completed. As events are inside a list in the quest class, we can know if all events of a quest are completed to finish the quest.
+
+![SubMissions](https://prnt.sc/n63fp9)
+
+
 
 
 
