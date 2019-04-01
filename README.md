@@ -16,7 +16,7 @@ If we want to create a fully new quest manager we will need to start by the ques
 Code should look something like this for Quests and Events structure:
 
 Quest:
-![The Team](http://prntscr.com/n5veso)
+![Quest Class](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/Quest.png)
 
 
 
