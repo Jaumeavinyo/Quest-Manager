@@ -3,6 +3,9 @@ So I needed to create a system to manage events that could be easily implemented
 
 ### DOWNLOAD LINKS
 
+[Quest Manager Exercices]()
+[Quest Manager fully working version]()
+
 
 
 You can ue the [editor on GitHub](https://github.com/Jaumeavinyo/Quest-Manager/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
