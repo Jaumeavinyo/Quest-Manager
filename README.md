@@ -37,7 +37,7 @@ Quest:
 
 
 
-![The Team](https://raw.githubusercontent.com/ChillChiliStudio/Order227/gh-pages/Graphic%20Resources/Members%20Fotos/team_photo.png)
+
 
 You can ue the [editor on GitHub](https://github.com/Jaumeavinyo/Quest-Manager/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
