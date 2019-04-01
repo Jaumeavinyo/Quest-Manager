@@ -46,8 +46,11 @@ Specific types of events like the example above will be needed to create differe
 
 ![Touch_Event Class](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/Touch_Event.png?raw=true)
 
+### How do we create new quests using an xml file?
 
+I think the most useful way to explain this is to show you the xml file.
 
+![XML_File](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/XML_File.png?raw=true)
 
 
 
