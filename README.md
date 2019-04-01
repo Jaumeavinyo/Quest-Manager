@@ -23,7 +23,13 @@ Event:
 
 ![Event Class](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/Quest.png)
 
+So you maybe are asking yourself… Who handles all this quests, events and information and make it work together? 
+A quest Manager!
 
+## The Quest Manager
+
+You may be worried about what you are going to read in the next few lines but it is easier than it seems. All the work is here, in these three lists:
+![Quest_Manager Class](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/Quest_Manager.png?raw=true)
 
 
 
