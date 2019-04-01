@@ -3,8 +3,9 @@ So I needed to create a system to manage events that could be easily implemented
 I prepared this guide to be a easy tutorial to follow but if you have any doubs contact me on: jaumavi1999@hotmail.com
 
 ## DOWNLOAD LINKS
-
+Quest_Manager code and exercices:
 [Quest Manager Exercices and code solution]()
+Executable version:
 [Quest Manager fully working version]()
 
 ### How does a quest manager works?
