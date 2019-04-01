@@ -37,6 +37,10 @@ The manager is the one that will handle quests and decide where they should go. 
 
 ## Do you really understand What are events?
 
+We call an event to something that happens and it was prepared previously to happen in an specific way. For example: if we touch an object in our game and the object suddenly gives us gold.
+This is a very simple event and if we take this object and we hide it, we have a new mission called: “find the treasure”. If we want the player to notice that his mission is to find the treasure we will need an activation event that can be something like a pnj that talks with you and ask you to find his treasure and give you a part of ir.
+So in every quest there are two types of events, the ones that start the mission and the ones that must be completed to complete the quest and receive the reward. If you want to activate a quest talking with an npc you will need to add a “Talk with x npc” event and add it the activator characteristic to activate the npc quest. This event could not be used to activate a quest but to finish a quest.
+Once a mission has been activated, when all events are done the mission ends giving you a reward and being moved to “ended quests” list.
 
 
 
