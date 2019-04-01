@@ -19,11 +19,6 @@
     </ActivationEvent>
     <SubEvent Type="1">
       <Object x="700" y ="500" w ="100" h ="100"/>
-    </SubEvent>
-    
-  
+    </SubEvent> 
   </quest>
-
-		
-
 </quests>

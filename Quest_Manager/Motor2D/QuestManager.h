@@ -50,7 +50,7 @@ public:
 	Quest() {};
 	~Quest();
 	
-	int DNI; //just to identify every quest by a number (just in case you want to acces a quest in a future)
+	int DNI; 
 	int Reward;
 	Event* activationEvent;
 	std::list <Event*> subMissions;
@@ -73,9 +73,9 @@ public:
 /*TODO 3: Here we have the xmlfile and the three list i talk you few minutes ago, we will need them in the future*/
 	pugi::xml_document xmlfile;
 
-	std::list<Quest*> preparedQuests; //quest that are not active because the trigger hasn't been triggered
-	std::list<Quest*> activatedQuests; //active quests that you can complete
-	std::list<Quest*> endedQuests; //done quests. You can not use this list and just destroy quests when finished
+	std::list<Quest*> preparedQuests;    //quest that are not active because the trigger hasn't been triggered
+	std::list<Quest*> activatedQuests;   //active quests that you can complete
+	std::list<Quest*> endedQuests;       //done quests. You can not use this list and just destroy quests when finished
 };
 //___________________________________________________
 
