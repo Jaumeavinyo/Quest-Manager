@@ -1,7 +1,7 @@
-## Introduction to quest management
+### Introduction to quest management
 So I needed to create a system to manage events that could be easily implemented in our games throw an XML file and be able to be activated and deactivated when finished. I had worked with other management systems before but this research work was going to be different. I had never worked with real missions in a game and if there was a mission it was very primitive and hardcoded. So it was time to try a new Quest manager!
 
-## DOWNLOAD LINKS
+### DOWNLOAD LINKS
 
 [Quest Manager Exercices and code solution]()
 [Quest Manager fully working version]()
@@ -26,7 +26,7 @@ Event:
 So you maybe are asking yourself… Who handles all this quests, events and information and make it work together? 
 A quest Manager!
 
-## The Quest Manager
+### The Quest Manager
 
 You may be worried about what you are going to read in the next few lines but it is easier than it seems. All the work is here, in these 
 three lists:
@@ -35,7 +35,7 @@ three lists:
 
 The manager is the one that will handle quests and decide where they should go. Prepared quests are the ones that have been stored and prepared to be activated by the activation event. These quests can go to the second list if we trigger the activation event. If a quest is finished will end up in the ended quests list.
 
-### Do you really understand What are events?
+## Do you really understand What are events?
 
 
 
