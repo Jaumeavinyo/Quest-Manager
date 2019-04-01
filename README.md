@@ -3,8 +3,9 @@ So I needed to create a system to manage events that could be easily implemented
 I prepared this guide to be a easy tutorial to follow but if you have any doubs contact me on: jaumavi1999@hotmail.com
 
 ## DOWNLOAD LINKS
-
+Quest_Manager code and exercices:
 [Quest Manager Exercices and code solution]()
+Executable version:
 [Quest Manager fully working version]()
 
 ### How does a quest manager works?
@@ -46,7 +47,16 @@ Specific types of events like the example above will be needed to create differe
 
 ![Touch_Event Class](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/Touch_Event.png?raw=true)
 
+### How do we create new quests using an xml file?
 
+I think the most useful way to explain this is to show you the xml file.
+
+![XML_File](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/XML_File.png?raw=true)
+
+As you can see there are two different quests, each quest has a DNI (identification number) and a different reward to give the player when he accomplishes the quest. Every quest need an activation event and this event is “type 1” which means is a touch event. So we know that the activation event is an object that activates the quest if you touch it.
+The activation event is not the only event the quest has. Once the quest is activated subEvents turn visible and can be completed. As events are inside a list in the quest class, we can know if all events of a quest are completed to finish the quest.
+
+![SubMissions](https://prnt.sc/n63fp9)
 
 
 
