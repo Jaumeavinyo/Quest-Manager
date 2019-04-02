@@ -95,7 +95,7 @@ TODO 11: We should think about erasing submissions when complete
 
 TODO 12: Move the quest that is in the iterator <it> to the <endedQuests> list.
  
- [move](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/TODO%2012.png?raw=true)
+ ![move](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/TODO%2012.png?raw=true)
 
 
 
