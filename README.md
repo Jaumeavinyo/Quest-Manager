@@ -1,3 +1,10 @@
+“I am <https://www.linkedin.com/in/jaume-avinyó-b13b17183>(Jaume Avinyó), student of the
+<https://www.citm.upc.edu/ing/estudis/graus-videojocs/>(Bachelor’s Degree in
+Video Games by UPC at CITM). This content is generated for the second year’s
+subject Project 2, under supervision of lecturer
+<https://es.linkedin.com/in/ricardpillosu>(Ricard Pillosu).” 
+
+
 ## Introduction to quest management
 So I needed to create a system to manage events that could be easily implemented in our games throw an XML file and be able to be activated and deactivated when finished. I had worked with other management systems before but this research work was going to be different. I had never worked with real missions in a game and if there was a mission it was very primitive and hardcoded. So it was time to try a new Quest manager!
 I prepared this guide to be a easy tutorial to follow but if you have any doubs contact me on: jaumavi1999@hotmail.com
@@ -69,7 +76,7 @@ TODO 1: Create the class Quest and prepare it to store the elements of the XML_F
 
 ![Quest Class](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/Quest.png?raw=true)
 
-TODO 2: Create a enum where you will store your event types. call it: <EVENT_TYPE> and declare a <TOUCH_EVENT>
+TODO 2: Create a enum where you will store your event types. call it: <EVENT_TYPE> and declare a TOUCH_EVENT
 
 ![enum](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/enum_event_type.png?raw=true)
 
@@ -77,7 +84,7 @@ TODO 3: I just want you to see that we already have 3 preparated lists to start 
 
 ![Lists](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/Three%20Lists.png?raw=true)
 
-TODOS 4, 5, 6, 8, 9: We will need to read our XML_File to store its data. We will also need to create events with the function <createEvent()> (this function is coded in TODO 7). Last but not less important will be to store the new quest into the <preparedQuests> List.
+TODOS 4, 5, 6, 8, 9: We will need to read our XML_File to store its data. We will also need to create events with the function <createEvent()> (this function is coded in TODO 7). Last but not less important will need to store the new quest into the <preparedQuests> List.
 
 ![Reader](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/TODOS%204%205%206%208%209.png?raw=true)
 
@@ -85,9 +92,31 @@ TODO 7: We have a function with an XML_Node as an argument and we will read the 
 
 ![createEvent](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/TODO%207.png?raw=true)
 
+TODO 10: The iterator  <it> is a quest and when the activation event is completed we need to move the quest from <preparedQuests> list to <activatedQuests> list.
+
+![Move quests](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/TODO%2010.png?raw=true)
+
+TODO 11: We should think about erasing submissions when complete
+
+![erase submissions](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/TODO%2011.png?raw=true)
+
+TODO 12: Move the quest that is in the iterator <it> to the <endedQuests> list.
+ 
+ ![move](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/TODO%2012.png?raw=true)
 
 
+##Bibliography
 
+The only usefull webpage I found that helped me with the research was this one
+
+[link](http://www.dannyb.me/posts/2014/02/creating_event_system_c++/)
+
+I also found quite interesting this two videos:
+
+[video_part_1](https://www.youtube.com/watch?v=5mlziHwq90k)
+[video_part_2](https://www.youtube.com/watch?v=xnopUoZbMEk&t=624s)
+
+The rest has been done throw deduction and observing other videogames like world of warcraft where missions are very easy to identify.
 
 
 
