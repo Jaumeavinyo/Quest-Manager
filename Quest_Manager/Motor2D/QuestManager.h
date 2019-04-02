@@ -21,7 +21,7 @@ class  Event
 {
 public:
 	Event(EVENT_TYPE type_) :type(type_) {};
-	~Event();
+	~Event() ;
 	EVENT_TYPE type;
 	int orderNumber; 
 	SDL_Rect Object;
@@ -48,15 +48,13 @@ class Quest
 {
 public:
 	Quest() {};
-	~Quest();
+	~Quest() ;
 	
 	int DNI; 
 	int Reward;
 	Event* activationEvent;
 	std::list <Event*> subMissions;
 
-private:
-	
 };
 //___________________________________________________
 

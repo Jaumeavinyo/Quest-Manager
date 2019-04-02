@@ -21,6 +21,11 @@ Quest_Manager::~Quest_Manager() {
 	}
 		
 }
+Quest::~Quest() {
+
+}
+Event::~Event() {
+}
 bool Quest_Manager::Awake(pugi::xml_node& config) {
 	LOG("STARTING QUESTMANAGER");
 	return true;
