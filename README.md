@@ -76,7 +76,7 @@ TODO 1: Create the class Quest and prepare it to store the elements of the XML_F
 
 ![Quest Class](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/Quest.png?raw=true)
 
-TODO 2: Create a enum where you will store your event types. call it: <EVENT_TYPE> and declare a <TOUCH_EVENT>
+TODO 2: Create a enum where you will store your event types. call it: <EVENT_TYPE> and declare a TOUCH_EVENT
 
 ![enum](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/enum_event_type.png?raw=true)
 
@@ -84,7 +84,7 @@ TODO 3: I just want you to see that we already have 3 preparated lists to start 
 
 ![Lists](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/Three%20Lists.png?raw=true)
 
-TODOS 4, 5, 6, 8, 9: We will need to read our XML_File to store its data. We will also need to create events with the function <createEvent()> (this function is coded in TODO 7). Last but not less important will be to store the new quest into the <preparedQuests> List.
+TODOS 4, 5, 6, 8, 9: We will need to read our XML_File to store its data. We will also need to create events with the function <createEvent()> (this function is coded in TODO 7). Last but not less important will need to store the new quest into the <preparedQuests> List.
 
 ![Reader](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/TODOS%204%205%206%208%209.png?raw=true)
 
