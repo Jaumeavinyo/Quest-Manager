@@ -98,7 +98,13 @@ TODO 12: Move the quest that is in the iterator <it> to the <endedQuests> list.
  ![move](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/TODO%2012.png?raw=true)
 
 
+##Bibliography
 
+The only usefull webpage I found that helped me with the research was this one
+
+[link](http://www.dannyb.me/posts/2014/02/creating_event_system_c++/)
+
+The rest has been done throw deduction and observing other videogames like world of warcraft where missions are very easy to identify.
 
 
 
