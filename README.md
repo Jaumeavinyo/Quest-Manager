@@ -104,6 +104,11 @@ The only usefull webpage I found that helped me with the research was this one
 
 [link](http://www.dannyb.me/posts/2014/02/creating_event_system_c++/)
 
+I also found quite interesting this two videos:
+
+[video_part_1](https://www.youtube.com/watch?v=5mlziHwq90k)
+[video_part_2](https://www.youtube.com/watch?v=xnopUoZbMEk&t=624s)
+
 The rest has been done throw deduction and observing other videogames like world of warcraft where missions are very easy to identify.
 
 
