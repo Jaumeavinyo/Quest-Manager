@@ -1,3 +1,10 @@
+“I am <https://www.linkedin.com/in/jaume-avinyó-b13b17183>(Jaume Avinyó), student of the
+<https://www.citm.upc.edu/ing/estudis/graus-videojocs/>(Bachelor’s Degree in
+Video Games by UPC at CITM). This content is generated for the second year’s
+subject Project 2, under supervision of lecturer
+<https://es.linkedin.com/in/ricardpillosu>(Ricard Pillosu).” 
+
+
 ## Introduction to quest management
 So I needed to create a system to manage events that could be easily implemented in our games throw an XML file and be able to be activated and deactivated when finished. I had worked with other management systems before but this research work was going to be different. I had never worked with real missions in a game and if there was a mission it was very primitive and hardcoded. So it was time to try a new Quest manager!
 I prepared this guide to be a easy tutorial to follow but if you have any doubs contact me on: jaumavi1999@hotmail.com
