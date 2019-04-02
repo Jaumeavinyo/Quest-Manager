@@ -85,6 +85,17 @@ TODO 7: We have a function with an XML_Node as an argument and we will read the 
 
 ![createEvent](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/TODO%207.png?raw=true)
 
+TODO 10: The iterator  <it> is a quest and when the activation event is completed we need to move the quest from <preparedQuests> list to <activatedQuests> list.
+
+![Move quests](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/TODO%2010.png?raw=true)
+
+TODO 11: We should think about erasing submissions when complete
+
+![erase submissions](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/TODO%2011.png?raw=true)
+
+TODO 12: Move the quest that is in the iterator <it> to the <endedQuests> list.
+ 
+ [move](https://github.com/Jaumeavinyo/Quest-Manager/blob/master/ScreenShots/TODO%2012.png?raw=true)
 
 
 
